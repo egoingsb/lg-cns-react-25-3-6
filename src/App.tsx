@@ -1,9 +1,9 @@
 import "./App.css";
-function Counter() {
+function Counter(props) {
     return (
         <>
-            <h1>카운터</h1>
-            <button>+</button> 0
+            <h1>{props.title}</h1>
+            <button>+</button> {props.initValue}
         </>
     );
 }
@@ -11,7 +11,8 @@ function Counter() {
 function App() {
     return (
         <>
-            <Counter></Counter>
+            <Counter title="counter" initValue={10}></Counter>
+            <Counter title="카운터" initValue={100}></Counter>
         </>
     );
 }
