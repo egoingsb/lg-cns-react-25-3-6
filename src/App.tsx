@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import s from "./App.module.css";
 function Counter({ title, initValue }: { title: string; initValue: number }) {
     const [value, setValue] = useState(initValue);
     const up = () => {
@@ -13,7 +14,7 @@ function Counter({ title, initValue }: { title: string; initValue: number }) {
     };
     return (
         <div className="counter-root">
-            <h1>{title}</h1>
+            <h1 className={s.em}>{title}</h1>
             <button onClick={up} style={style}>
                 +
             </button>
