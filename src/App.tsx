@@ -2,9 +2,7 @@ import { useState } from "react";
 import "./App.css";
 function Counter({ title, initValue }: { title: string; initValue: number }) {
     const [value, setValue] = useState(initValue);
-    function up() {
-        setValue(value + 1);
-    }
+    const up = () => setValue(value + 1);
     return (
         <>
             <h1>{title}</h1>
