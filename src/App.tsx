@@ -1,9 +1,9 @@
 import "./App.css";
-function Counter(props: { title: string; initValue: number }) {
+function Counter({ title, initValue }: { title: string; initValue: number }) {
     return (
         <>
-            <h1>{props.title}</h1>
-            <button>+</button> {props.initValue}
+            <h1>{title}</h1>
+            <button>+</button> {initValue}
         </>
     );
 }
