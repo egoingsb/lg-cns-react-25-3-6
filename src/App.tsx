@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import s from "./App.module.css";
 function Counter({ title, initValue }: { title: string; initValue: number }) {
@@ -12,6 +12,15 @@ function Counter({ title, initValue }: { title: string; initValue: number }) {
         margin: "5px",
         backgroundColor: "red",
     };
+    useEffect(() => {
+        fetch("http://localhost:9999/counter")
+            .then((resp) => resp.json())
+            .then((result) => {
+                console.log("useEffect 안이에요!!", result.value);
+                setValue(result.value);
+            });
+    }, []);
+
     return (
         <div className="counter-root">
             <h1 className={s.em}>{title}</h1>
@@ -30,7 +39,6 @@ function App() {
     return (
         <>
             <Counter title="counter" initValue={10}></Counter>
-            <Counter title="카운터" initValue={100}></Counter>
         </>
     );
 }
