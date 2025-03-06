@@ -1,9 +1,5 @@
 import "./App.css";
-type CounterProps = {
-    title: string;
-    initValue: number;
-};
-function Counter(props: CounterProps) {
+function Counter(props: { title: string; initValue: number }) {
     return (
         <>
             <h1>{props.title}</h1>
