@@ -12,7 +12,7 @@ function Counter({ title, initValue }: { title: string; initValue: number }) {
         backgroundColor: "red",
     };
     return (
-        <>
+        <div className="counter-root">
             <h1>{title}</h1>
             <button onClick={up} style={style}>
                 +
@@ -21,7 +21,7 @@ function Counter({ title, initValue }: { title: string; initValue: number }) {
                 -
             </button>
             {value}
-        </>
+        </div>
     );
 }
 
