@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 function Counter({ title, initValue }: { title: string; initValue: number }) {
-    const valueState = useState(initValue);
-    const value = valueState[0];
-    const setValue = valueState[1];
+    const [value, setValue] = useState(initValue);
     function up() {
         setValue(value + 1);
     }
