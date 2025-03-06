@@ -3,10 +3,13 @@ import "./App.css";
 function Counter({ title, initValue }: { title: string; initValue: number }) {
     const [value, setValue] = useState(initValue);
     const up = () => setValue(value + 1);
+    const down = () => setValue(value - 1);
     return (
         <>
             <h1>{title}</h1>
-            <button onClick={up}>+</button> {value}
+            <button onClick={up}>+</button>
+            <button onClick={down}>-</button>
+            {value}
         </>
     );
 }
