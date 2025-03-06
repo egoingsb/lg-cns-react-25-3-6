@@ -7,11 +7,19 @@ function Counter({ title, initValue }: { title: string; initValue: number }) {
         setValue(value + 1);
     };
     const down = () => setValue(value - 1);
+    const style = {
+        margin: "5px",
+        backgroundColor: "red",
+    };
     return (
         <>
             <h1>{title}</h1>
-            <button onClick={up}>+</button>
-            <button onClick={down}>-</button>
+            <button onClick={up} style={style}>
+                +
+            </button>
+            <button onClick={down} style={style}>
+                -
+            </button>
             {value}
         </>
     );
