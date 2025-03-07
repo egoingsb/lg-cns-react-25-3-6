@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import s from "./App.module.css";
+import { Button, Container } from "@mui/material";
 function Counter({ title, initValue }: { title: string; initValue: number }) {
     const [value, setValue] = useState(initValue);
     const changeHandler = (_value: number) => {
@@ -33,12 +34,12 @@ function Counter({ title, initValue }: { title: string; initValue: number }) {
     return (
         <div className="counter-root">
             <h1 className={s.em}>{title}</h1>
-            <button onClick={up} style={style}>
+            <Button onClick={up} style={style}>
                 +
-            </button>
-            <button onClick={down} style={style}>
+            </Button>
+            <Button onClick={down} style={style}>
                 -
-            </button>
+            </Button>
             {value}
         </div>
     );
@@ -46,9 +47,9 @@ function Counter({ title, initValue }: { title: string; initValue: number }) {
 
 function App() {
     return (
-        <>
+        <Container maxWidth="sm">
             <Counter title="counter" initValue={10}></Counter>
-        </>
+        </Container>
     );
 }
 
